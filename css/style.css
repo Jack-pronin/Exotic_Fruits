@@ -191,6 +191,7 @@ body {
             grid-column-gap: 47px;
 
             .day-product__slider {
+                margin: 17px 0;
                 /*align-self: center;*/
 
                 .slick-prev, .slick-next {
@@ -199,7 +200,7 @@ body {
                 }
 
                 .slick-next {
-                    top: 0;
+                    top: -13px;
                     right: calc(50% - 10px);
 
                     &:before {
@@ -209,7 +210,7 @@ body {
                 }
 
                 .slick-prev {
-                    bottom: 7.5px;
+                    bottom: -4px;
                     left: calc(50% - 10px);
 
                     &:before {
@@ -307,7 +308,7 @@ body {
 
                 .day-product__description-title {
                     line-height: 22px;
-                    margin-top: 14px;
+                    margin-top: 13px;
                     font-size: 30px;
                     font-family: MontserratExtraBold, sans-serif;
                     color: rgb(13, 26, 7);
