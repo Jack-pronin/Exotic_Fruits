@@ -93,14 +93,14 @@ body {
             font-family: MontserratExtraBold, sans-serif;
             color: rgb(13, 26, 7);
             line-height: 1.109;
-            text-shadow: 0px 0px 11.96px rgba(194, 170, 52, 0.21);
+            text-shadow: 0 0 11.96px rgba(194, 170, 52, 0.21);
         }
 
         .main__description {
             font-size: 20px;
             color: rgb(13, 26, 7);
             line-height: 1.25;
-            text-shadow: 0px 0px 11.96px rgba(194, 170, 52, 0.21);
+            text-shadow: 0 0 11.96px rgba(194, 170, 52, 0.21);
         }
 
         .main__action {
@@ -376,6 +376,86 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+
+.why-we {
+    padding: 90px 0;
+
+    .why-we__title {
+        font-size: 40px;
+        font-family: MontserratExtraBold, sans-serif;
+        color: rgb(13, 26, 7);
+        text-align: center;
+        margin-bottom: 88px;
+    }
+
+    .why-we__advantages {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+
+        .why-we__advantage {
+            display: grid;
+            grid-template-columns: 84px 258px;
+            gap: 20px;
+            align-items: center;
+            justify-items: center;
+
+            .why-we__advantage-box {
+                position: relative;
+                width: 100%;
+
+                &:before {
+                    content: url("../assets/images/bg/bg-icon.png");
+                    position: absolute;
+                    left: 0;
+                    top: -19px;
+                    z-index: -1;
+                    width: 84px;
+                }
+
+                .why-we__advantage-icon {
+                    margin-left: 27px;
+                    width: 40px;
+                }
+            }
+
+            .wy-we__advantage-text {
+                font-size: 14px;
+                color: rgb(13, 26, 7);
+                line-height: 1.357;
+            }
+        }
+    }
+}
+
+.products {
+    padding: 90px 0 180px 0;
+
+    .products__title {
+        font-family: MontserratExtraBold, sans-serif;
+        font-size: 40px;
+        color: rgb(13, 26, 7);
+        text-align: center;
+        margin-bottom: 39px;
+    }
+
+    .products__tab {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto 142px auto;
+        width: 583px;
+        height: 47px;
+        border: 2px solid rgb(30, 51, 19);
+        border-radius: 23.5px;
+
+        .products__tab-choice {
+            font-size: 18px;
+            color: rgb(13, 26, 7);
         }
     }
 }
