@@ -129,7 +129,6 @@ body {
 
 .info {
     padding: 206px 0 90px 0;
-    background: url("../assets/images/bg/leaf-1.png") no-repeat -38px 57px;
 
     .info__container {
         display: grid;
@@ -192,7 +191,6 @@ body {
 
             .day-product__slider {
                 margin: 17px 0;
-                /*align-self: center;*/
 
                 .slick-prev, .slick-next {
                     top: unset;
@@ -447,7 +445,7 @@ body {
         box-sizing: border-box;
         justify-content: space-around;
         align-items: center;
-        margin: 0 auto 142px auto;
+        margin: 0 auto 95px auto;
         width: 583px;
         height: 47px;
         border: 2px solid rgb(30, 51, 19);
@@ -463,13 +461,18 @@ body {
         display: grid;
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 138px 123px;
+        grid-gap: 123px 108px;
 
         .products__item {
             display: flex;
             flex-direction: column;
             gap: 30px;
             text-align: center;
+
+            .products__item-image {
+                height: 277px;
+                align-content: center;
+            }
 
             .products__item-title {
                 font-family: MontserratBold, sans-serif;
@@ -485,4 +488,181 @@ body {
             }
         }
     }
+}
+
+.howToOrder {
+    padding: 90px 0;
+
+    .howToOrder__title {
+        font-family: MontserratExtraBold, sans-serif;
+        color: rgb(13, 26, 7);
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 66px;
+    }
+
+    .howToOrder__steps {
+        background: url("../assets/images/bg/howToOrder.png") no-repeat;
+        height: 256px;
+        position: relative;
+
+        .howToOrder__step {
+            display: flex;
+            position: absolute;
+
+            .howToOrder__marker {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                font-family: MontserratBold, sans-serif;
+                color: rgb(13, 26, 7);
+                border-radius: 50%;
+                background-color: rgb(253, 222, 11);
+                width: 30px;
+                height: 30px;
+            }
+
+            .howToOrder__text {
+                font-size: 14px;
+                color: rgb(13, 26, 7);
+                line-height: 1.357;
+                text-align: center;
+            }
+        }
+
+        .howToOrder__step1 {
+            flex-direction: column-reverse;
+            gap: 40px;
+            align-items: flex-end;
+            left: 49px;
+            top: 80px;
+
+            .howToOrder__marker1 {
+                margin-right: 20px;
+            }
+        }
+
+        .howToOrder__step2 {
+            flex-direction: column;
+            gap: 53px;
+            top: 148px;
+            left: 258px;
+            align-items: flex-end;
+
+            .howToOrder__text2 {
+                margin-right: 26px;
+            }
+        }
+
+        .howToOrder__step3 {
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 70px;
+            top: -12px;
+            right: 311px;
+        }
+
+        .howToOrder__step4 {
+            gap: 40px;
+            flex-direction: row-reverse;
+            top: 183px;
+            right: 40px;
+        }
+
+        .howToOrder__text4 {
+            margin-top: 13px;
+        }
+    }
+}
+
+.reviews {
+    padding: 120px 0;
+
+    .reviews__container {
+        max-width: 1048px;
+
+
+        .reviews__title {
+            font-size: 40px;
+            font-family: MontserratExtraBold, sans-serif;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .reviews__slider {
+
+            .slick-next, .slick-prev {
+                width: 15px;
+                height: 28px;
+            }
+
+            .slick-next {
+                right: -30px;
+
+                &:before {
+                    content: url("../assets/images/arrows/next-reviews.png");
+                }
+            }
+
+            .slick-prev {
+                left: -30px;
+                &:before {
+                    content: url("../assets/images/arrows/prev-reviews.png");
+                }
+            }
+
+            .reviews__slider-item {
+                margin: 0 15px;
+                display: grid;
+                grid-template-columns: 83px 280px;
+                align-items: center;
+                grid-gap: 35px 20px;
+                padding: 44px 31px 45px 80px;
+                background-image: url("../assets/images/bg/bg-review.png");
+                background-repeat: no-repeat;
+
+                .reviews__img {
+                    width: 83px;
+                    height: 83px;
+                    border-radius: 50%;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                .reviews__img1 {
+                    background-image: url("../assets/images/people/анастасия.png");
+                }
+
+                .reviews__img2 {
+                    background-image: url("../assets/images/people/александр.png");
+                }
+
+                .reviews__img3 {
+                    background-image: url("../assets/images/people/jack.jpeg");
+                }
+
+                .reviews__img4 {
+                    background-image: url("../assets/images/people/elena.jpeg");
+                }
+
+                .reviews__name {
+                    font-size: 20px;
+                    font-family: MontserratBold, sans-serif;
+                    color: rgb(13, 26, 7);
+                }
+
+                .reviews__text {
+                    width: 383px;
+                    font-size: 16px;
+                    color: rgb(13, 26, 7);
+                    line-height: 1.313;
+                }
+            }
+        }
+    }
+}
+
+.questions {
+    padding: 60px 0 180px 0;
 }

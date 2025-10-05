@@ -9,4 +9,10 @@ $(document).ready(function () {
         centerMode: true,
         centerPadding: 0,
     });
+
+    $('.reviews__slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+    })
 })
