@@ -25,7 +25,7 @@
 
 body {
     font-family: MontserratRegular, sans-serif;
-    background: url("../assets/images/bg/Фигура 2.png") no-repeat top;
+    background: url("../assets/images/bg/Фигура 2.png") no-repeat center top;
 }
 
 
@@ -91,7 +91,7 @@ body {
         display: grid;
         grid-template-columns: 567px 1fr;
         grid-template-rows: 153px 47px 98px;
-        grid-gap: 46px 41px;
+        grid-gap: 46px 42px;
 
         .main__title {
             font-size: 46px;
@@ -123,10 +123,21 @@ body {
             grid-column: 2/3;
             grid-row: 1/4;
             position: relative;
-            top: -237px;
+            top: -138px;
+
+            .main__img-splash {
+                position: absolute;
+                top: -25%;
+                left: 31%;
+                z-index: 0;
+                max-width: 100%;
+            }
+
 
             .main__img {
-                /*max-width: 100%;*/
+                position: relative;
+                max-width: 100%;
+                z-index: 1;
             }
         }
     }
@@ -134,12 +145,22 @@ body {
 
 .info {
     padding: 206px 0 90px 0;
+    position: relative;
+
+    .leaf1 {
+        position: absolute;
+        top: 57px;
+        left: 0;
+        z-index: -1;
+    }
 
     .info__container {
+        max-width: 990px;
         display: grid;
         grid-template-columns: 418px 475px;
         grid-template-rows: 134px 73px 73px 93px;
         grid-gap: 15px 95px;
+
 
         .info__image {
             grid-column: 1/2;
@@ -190,31 +211,23 @@ body {
 
         .day-product__info {
             display: grid;
-            grid-template-columns: 133px 421px 95px 350px;
+            grid-template-columns: 135px 419px 95px 350px;
             grid-template-rows: 406px;
             grid-column-gap: 47px;
 
             .day-product__slider {
-                margin: 17px 0;
+                margin: 19px 0;
+                justify-self: center;
 
                 .slick-prev, .slick-next {
                     top: unset;
                     height: 8px;
+                    width: 20px;
                 }
 
                 .slick-next {
-                    top: -13px;
+                    bottom: 18px;
                     right: calc(50% - 10px);
-
-                    &:before {
-                        content: url("../assets/images/arrows/next.png");
-                        font-size: 0;
-                    }
-                }
-
-                .slick-prev {
-                    bottom: -4px;
-                    left: calc(50% - 10px);
 
                     &:before {
                         content: url("../assets/images/arrows/prev.png");
@@ -222,15 +235,34 @@ body {
                     }
                 }
 
+                .slick-prev {
+                    top: -15px;
+                    left: calc(50% - 10px);
+
+                    &:before {
+                        content: url("../assets/images/arrows/next.png");
+                        font-size: 0;
+                    }
+                }
+
                 .day-product__slider__item {
-                    margin: 15px 0;
-                    height: 86px;
+                    margin: 12px 0;
+                    height: 84px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
 
+                    .mango2, .mango1 {
+                        width: 88px;
+                    }
+
+                    .mango3 {
+                        width: 78px;
+                    }
+
                     .day-product__slider__img {
                         max-width: 100%;
+                        max-height: 100%;
                     }
                 }
 
@@ -238,13 +270,15 @@ body {
 
             .day-product__image {
                 position: relative;
-                top: 20px;
-                left: -104px;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 .day-product__image-discount {
                     position: absolute;
-                    top: 23px;
-                    left: 479px;
+                    top: 42px;
+                    right: 11px;
                     line-height: 1;
                     font-size: 16px;
                     font-family: MontserratBold, sans-serif;
@@ -436,6 +470,14 @@ body {
 
 .products {
     padding: 90px 0 180px 0;
+    position: relative;
+
+    .leaf2 {
+        position: absolute;
+        top: 98px;
+        right: 0;
+        z-index: -1;
+    }
 
     .products__title {
         font-family: MontserratExtraBold, sans-serif;
@@ -506,10 +548,14 @@ body {
         margin-bottom: 66px;
     }
 
+
     .howToOrder__steps {
-        background: url("../assets/images/bg/howToOrder.png") no-repeat;
-        height: 256px;
         position: relative;
+        max-height: 256px;
+
+        .howToOrder__img {
+            max-width: 100%;
+        }
 
         .howToOrder__step {
             display: flex;
@@ -540,8 +586,8 @@ body {
             flex-direction: column-reverse;
             gap: 40px;
             align-items: flex-end;
-            left: 49px;
-            top: 80px;
+            left: calc(9.64% - 55px);
+            top: calc(58.9% - 78px);
 
             .howToOrder__marker1 {
                 margin-right: 20px;
@@ -551,8 +597,8 @@ body {
         .howToOrder__step2 {
             flex-direction: column;
             gap: 53px;
-            top: 148px;
-            left: 258px;
+            top: 57.8%;
+            right: 59.28%;
             align-items: flex-end;
 
             .howToOrder__text2 {
@@ -564,15 +610,15 @@ body {
             flex-direction: row-reverse;
             align-items: center;
             gap: 70px;
-            top: -12px;
-            right: 311px;
+            top: calc(4.7% - 23px);
+            right: 28%;
         }
 
         .howToOrder__step4 {
             gap: 40px;
             flex-direction: row-reverse;
-            top: 183px;
-            right: 40px;
+            top: 71.5%;
+            right: 3.5%;
         }
 
         .howToOrder__text4 {
@@ -619,6 +665,7 @@ body {
             }
 
             .reviews__slider-item {
+                justify-content: center;
                 margin: 0 15px;
                 display: grid;
                 grid-template-columns: 83px 280px;
@@ -627,6 +674,7 @@ body {
                 padding: 44px 31px 45px 80px;
                 background-image: url("../assets/images/bg/bg-review.png");
                 background-repeat: no-repeat;
+                background-position: center;
 
                 .reviews__img {
                     width: 83px;
@@ -671,6 +719,21 @@ body {
 
 .questions {
     padding: 60px 0 180px 0;
+    position: relative;
+
+    .leaf3 {
+        position: absolute;
+        left: 0;
+        top: 60px;
+        z-index: -1;
+    }
+
+    .leaf4 {
+        position: absolute;
+        left: 0;
+        top: 400px;
+        z-index: -1;
+    }
 
     .questions__container {
         max-width: 920px;
@@ -695,7 +758,7 @@ body {
                 flex-direction: row-reverse;
                 margin: 10px 0 0 0;
                 padding: 25px 40px;
-                background: transparent;
+                background: white;
                 border: 1px solid #fdde0b;
 
                 .ui-icon {
@@ -728,12 +791,11 @@ body {
                 font-size: 16px;
                 color: rgb(13, 26, 7);
                 line-height: 1.313;
-                background: transparent;
+                background: white;
                 border: 1px solid #fdde0b;
                 padding: 30px 200px 30px 40px;
                 border-top: 0;
                 border-radius: 0 0 15px 15px;
-                height: unset;
             }
         }
     }
@@ -764,6 +826,7 @@ body {
                 height: 43px;
 
                 svg {
+                    transition: fill 0.2s;
                     width: 100%;
                     height: 100%;
                     fill: white;
@@ -771,6 +834,13 @@ body {
 
                 &:first-child {
                     margin-right: 5px;
+                }
+
+                &:hover {
+
+                    svg {
+                        fill: rgba(255, 255, 255, 0.9);
+                    }
                 }
             }
 
