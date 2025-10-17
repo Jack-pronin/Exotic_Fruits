@@ -66,7 +66,22 @@ body {
         align-items: center;
         justify-items: center;
 
+        .header__burger {
+            display: none;
+            height: 21px;
+            justify-self: end;
+
+            svg {
+                width: 30px;
+                height: 21px;
+            }
+        }
+
         .menu {
+            .menu__close {
+                display: none;
+            }
+
             .menu__list {
                 list-style: none;
                 display: grid;
@@ -165,7 +180,7 @@ body {
         .info__image {
             grid-column: 1/2;
             grid-row: 1/5;
-            background: url("../assets/images/bg/bg-info.png") no-repeat;
+            background: url("../assets/images/bg/bg-info.png") no-repeat center;
             position: relative;
 
             .info__img {
@@ -187,6 +202,10 @@ body {
             font-size: 14px;
             color: rgb(13, 26, 7);
             line-height: 1.357;
+
+            &:last-of-type {
+                max-width: 470px;
+            }
 
             .info__description-span {
                 font-family: MontserratBold, sans-serif;
@@ -294,7 +313,6 @@ body {
 
                 }
             }
-
 
             .day-product__time {
                 background-color: rgb(251, 249, 243);
@@ -407,6 +425,10 @@ body {
                     font-size: 14px;
                     color: rgb(13, 26, 7);
 
+                    .day-product__count-bold {
+                        font-family: MontserratBold, sans-serif;
+                    }
+
                     .day-product__icon {
                         width: 22px;
                         fill: #fdda02;
@@ -489,8 +511,8 @@ body {
 
     .products__tab {
         display: flex;
+        overflow: visible;
         box-sizing: border-box;
-        justify-content: space-around;
         align-items: center;
         margin: 0 auto 95px auto;
         width: 583px;
@@ -498,10 +520,24 @@ body {
         border: 2px solid rgb(30, 51, 19);
         border-radius: 23.5px;
 
-        .products__tab-choice {
+        .products__tab-choice-btn {
+            border: none;
+            box-sizing: border-box;
+            background-color: transparent;
             font-size: 18px;
+            padding: 11px 40px;
+            border-radius: 23.5px;
             color: rgb(13, 26, 7);
+
+            &:first-child:hover {
+                border: 2px solid rgb(30, 51, 19);
+                padding: 11px 40px;
+                border-radius: 21px 23.5px 23.5px 21px;
+                background-color: rgb(30, 51, 19);
+            }
         }
+
+
     }
 
     .products__items {
@@ -518,7 +554,14 @@ body {
 
             .products__item-image {
                 height: 277px;
-                align-content: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
             }
 
             .products__item-title {
@@ -555,6 +598,11 @@ body {
 
         .howToOrder__img {
             max-width: 100%;
+        }
+
+        .howToOrder__img-1, .howToOrder__img-2 {
+            width: 305px;
+            display: none;
         }
 
         .howToOrder__step {
