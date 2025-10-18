@@ -510,34 +510,81 @@ body {
     }
 
     .products__tab {
+        --hl-left: 0px;
+        --hl-width: 0px;
+
         display: flex;
-        overflow: visible;
+        justify-content: space-between;
         box-sizing: border-box;
         align-items: center;
         margin: 0 auto 95px auto;
         width: 583px;
         height: 47px;
+        position: relative;
         border: 2px solid rgb(30, 51, 19);
         border-radius: 23.5px;
 
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 100%;
+            left: var(--hl-left);
+            width: var(--hl-width);
+            background-color: rgb(30, 51, 19);
+            border-radius: 23.5px;
+            transition: all 0.5s cubic-bezier(0.4, 1, 0.5, 1);
+        }
+
         .products__tab-choice-btn {
+            font-family: MontserratRegular, sans-serif;
             border: none;
             box-sizing: border-box;
             background-color: transparent;
             font-size: 18px;
-            padding: 11px 40px;
-            border-radius: 23.5px;
             color: rgb(13, 26, 7);
+            cursor: pointer;
+            z-index: 1;
+            transition: color 0.3s ease, font-family 0.3s ease;
 
             &:first-child:hover {
-                border: 2px solid rgb(30, 51, 19);
-                padding: 11px 40px;
                 border-radius: 21px 23.5px 23.5px 21px;
-                background-color: rgb(30, 51, 19);
+            }
+
+            &:hover {
+                font-family: MontserratBold, sans-serif;
+                padding: 11px 39px;
+                color: #fefdfd;
+            }
+
+            &:last-child:hover {
+                border-radius: 23.5px 21px 21px 23.5px;
+            }
+
+            &:first-child {
+                padding-left: 39px;
+            }
+
+            &:last-child {
+                padding-right: 39px;
             }
         }
 
+        .active {
+            font-family: MontserratBold, sans-serif;
+            padding: 11px 39px;
+            border-radius: 23.5px;
+            background-color: rgb(30, 51, 19);
+            color: #fefdfd;
 
+            &:first-of-type {
+                border-radius: 21px 23.5px 23.5px 21px;
+            }
+
+            &:last-of-type{
+                border-radius: 23.5px 21px 21px 23.5px;
+            }
+        }
     }
 
     .products__items {
