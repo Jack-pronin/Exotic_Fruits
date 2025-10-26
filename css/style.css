@@ -33,6 +33,9 @@ body {
     background: url("../assets/images/bg/Фигура 2.png") no-repeat center top;
 }
 
+main {
+    position: relative;
+}
 
 .container {
     max-width: 1110px;
@@ -51,6 +54,11 @@ body {
     text-align: center;
     border: 0;
     box-sizing: border-box;
+    transition: transform 0.5s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .logo {
@@ -95,6 +103,16 @@ body {
                 display: grid;
                 grid-template-columns: repeat(5, auto);
                 grid-column-gap: 39px;
+
+                .menu__item {
+                    width: 100%;
+                    border-bottom: 2px solid transparent;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        border-bottom: 2px solid rgb(13, 26, 7);
+                    }
+                }
 
                 .menu__link {
                     font-size: 16px;
@@ -611,11 +629,18 @@ body {
             gap: 30px;
             text-align: center;
 
+            &:hover {
+                .products__item-image {
+                    transform: scale(1.1);
+                }
+            }
+
             .products__item-image {
                 height: 277px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                transition: all .2s linear;
 
                 img {
                     max-width: 100%;
@@ -826,6 +851,7 @@ body {
                     font-size: 16px;
                     color: rgb(13, 26, 7);
                     line-height: 1.313;
+                    height: 84px;
                 }
             }
         }
@@ -1128,6 +1154,11 @@ body {
                     }
 
                 }
+
+                .order__error {
+                    width: 100%;
+                    text-align: center;
+                }
             }
 
             .form__input {
@@ -1161,6 +1192,7 @@ body {
 
             .order__error {
                 display: none;
+                font-size: 18px;
                 color: red;
                 line-height: 1.4;
             }

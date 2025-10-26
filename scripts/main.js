@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    new WOW({
+        animateClass: 'animate__animated',
+    }).init();
+
     $('.day-product__slider').slick({
         arrows: true,
         vertical: true,
@@ -124,10 +128,13 @@ $(document).ready(function () {
     let thankYouMsg = $('#thankYouMessage');
     let orderTittle = $('.order__title');
     let orderText = $('.order__text');
+    let phone = $('#phone');
+
+    phone.inputmask({"mask": "+7 (999) 999-99-99"});
+
 
     $('#submit').click(function () {
         let name = $('#name');
-        let phone = $('#phone');
         let errorInput = $('.order__error');
         let hasError = false;
         let fruits = $('input[name="fruits"]:checked')
