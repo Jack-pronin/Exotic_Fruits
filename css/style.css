@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    caret-color: transparent;
 }
 
 @font-face {
@@ -21,6 +22,10 @@
 @font-face {
     font-family: MontserratMedium;
     src: url("../assets/fonts/Montserrat-Medium.ttf");
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -78,6 +83,9 @@ body {
         }
 
         .menu {
+            position: relative;
+            z-index: 100;
+
             .menu__close {
                 display: none;
             }
@@ -113,14 +121,14 @@ body {
             font-family: MontserratExtraBold, sans-serif;
             color: rgb(13, 26, 7);
             line-height: 1.109;
-            text-shadow: 0 0 11.96px rgba(194, 170, 52, 0.21);
+            text-shadow: 0 0 12px rgba(194, 170, 52, 0.21);
         }
 
         .main__description {
             font-size: 20px;
             color: rgb(13, 26, 7);
             line-height: 1.25;
-            text-shadow: 0 0 11.96px rgba(194, 170, 52, 0.21);
+            text-shadow: 0 0 12px rgba(194, 170, 52, 0.21);
         }
 
         .main__action {
@@ -270,6 +278,7 @@ body {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    cursor: pointer;
 
                     .mango2, .mango1 {
                         width: 88px;
@@ -518,7 +527,7 @@ body {
         box-sizing: border-box;
         align-items: center;
         margin: 0 auto 95px auto;
-        width: 583px;
+        max-width: 583px;
         height: 47px;
         position: relative;
         border: 2px solid rgb(30, 51, 19);
@@ -533,7 +542,7 @@ body {
             width: var(--hl-width);
             background-color: rgb(30, 51, 19);
             border-radius: 23.5px;
-            transition: all 0.5s cubic-bezier(0.4, 1, 0.5, 1);
+            transition: all 0.3s linear;
         }
 
         .products__tab-choice-btn {
@@ -544,17 +553,20 @@ body {
             font-size: 18px;
             color: rgb(13, 26, 7);
             cursor: pointer;
+            border-radius: 23.5px;
             z-index: 1;
-            transition: color 0.3s ease, font-family 0.3s ease;
+
+            &:hover {
+                background-color: rgb(30, 51, 19);
+                border-radius: 23.5px;
+                font-family: MontserratBold, sans-serif;
+                padding: 11px 39px;
+                transition: all 0.4s ease-in-out;
+                color: #fefdfd;
+            }
 
             &:first-child:hover {
                 border-radius: 21px 23.5px 23.5px 21px;
-            }
-
-            &:hover {
-                font-family: MontserratBold, sans-serif;
-                padding: 11px 39px;
-                color: #fefdfd;
             }
 
             &:last-child:hover {
@@ -576,12 +588,13 @@ body {
             border-radius: 23.5px;
             background-color: rgb(30, 51, 19);
             color: #fefdfd;
+            transition: all 0.4s ease-in-out;
 
             &:first-of-type {
                 border-radius: 21px 23.5px 23.5px 21px;
             }
 
-            &:last-of-type{
+            &:last-of-type {
                 border-radius: 23.5px 21px 21px 23.5px;
             }
         }
@@ -589,7 +602,6 @@ body {
 
     .products__items {
         display: grid;
-        grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 123px 108px;
 
@@ -795,6 +807,14 @@ body {
                     background-image: url("../assets/images/people/elena.jpeg");
                 }
 
+                .reviews__img5 {
+                    background-image: url("../assets/images/people/алексей.jpg");
+                }
+
+                .reviews__img6 {
+                    background-image: url("../assets/images/people/ирина.jpeg");
+                }
+
                 .reviews__name {
                     font-size: 20px;
                     font-family: MontserratBold, sans-serif;
@@ -944,6 +964,217 @@ body {
         .footer__text {
             font-size: 14px;
             color: rgb(48, 56, 44);
+        }
+    }
+}
+
+.scroll {
+    cursor: pointer;
+    display: flex;
+    z-index: 900;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 78px;
+    height: 78px;
+    right: 71px;
+    bottom: 275px;
+    background-image: url("../assets/images/bg/bg-info.png");
+    background-size: 78px 78px;
+    transition: transform 0.5s ease;
+
+    img {
+        width: 26px;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.order {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+
+    .container__order {
+        max-width: 720px;
+        background-color: white;
+        padding: 40px 80px;
+        border-radius: 50px;
+        position: relative;
+        z-index: -2;
+        overflow: hidden;
+
+        .order__close {
+            z-index: -1;
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+
+            svg {
+                fill: rgb(13, 26, 7);
+            }
+        }
+
+        .leaf__order1 {
+            transform: scaleX(-1);
+            rotate: 20deg;
+            position: absolute;
+            right: -8%;
+            bottom: -8%;
+            z-index: -1;
+            width: 35%;
+        }
+
+        .leaf__order2 {
+            position: absolute;
+            transform: scaleX(-1);
+            left: -10%;
+            z-index: -1;
+            top: 0;
+            width: 25%;
+        }
+
+        .order__title {
+            font-family: MontserratExtraBold, sans-serif;
+            font-size: 40px;
+            text-align: center;
+            color: rgb(13, 26, 7);
+            margin-bottom: 35px;
+        }
+
+        .order__text {
+            text-align: center;
+            color: rgb(13, 26, 7);
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            .form__title {
+                font-family: MontserratBold, sans-serif;
+                color: rgb(13, 26, 7);
+                font-size: 24px;
+            }
+
+            .form__fruits {
+                color: rgb(13, 26, 7);
+                font-size: 18px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                gap: 10px;
+
+                .form__fruit {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    gap: 8px;
+
+                    input[type="checkbox" i] {
+                        position: relative;
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        cursor: pointer;
+                        width: 30px;
+                        height: 30px;
+                        box-sizing: border-box;
+                        border: 3px solid #fdde0b;
+                        border-radius: 50%;
+
+                        &::before {
+                            transition: all 0.3s ease;
+                            content: '';
+                        }
+
+                        &:hover::before {
+                            content: '';
+                            position: absolute;
+                            top: 4px;
+                            left: 4px;
+                            width: 16px;
+                            height: 16px;
+                            background: rgba(253, 222, 11, 0.4);
+                            border-radius: 50%;
+                        }
+
+                        &:checked::before {
+                            content: '';
+                            position: absolute;
+                            top: 4px;
+                            left: 4px;
+                            width: 16px;
+                            height: 16px;
+                            background: #fdde0b;
+                            border-radius: 50%;
+                        }
+                    }
+
+                }
+            }
+
+            .form__input {
+                text-align: center;
+
+                .order__input {
+                    font-family: MontserratBold, sans-serif;
+                    color: rgb(30, 51, 19);
+                    font-size: 18px;
+                    box-sizing: border-box;
+                    width: 290px;
+                    border-radius: 47px;
+                    border: 2px solid rgb(30, 51, 19);
+                    height: 60px;
+                    outline: none;
+                    padding: 0 20px;
+                    caret-color: rgb(30, 51, 19);
+
+                    &::placeholder {
+                        font-family: MontserratRegular, sans-serif;
+                        color: rgb(30, 51, 19);
+                    }
+                }
+            }
+
+            .order__btn {
+                width: 290px;
+                height: 60px;
+                border-radius: 47px;
+            }
+
+            .order__error {
+                display: none;
+                color: red;
+                line-height: 1.4;
+            }
+        }
+
+        #thankYouMessage {
+            display: none;
+            align-items: center;
+            font-family: MontserratExtraBold, sans-serif;
+            color: rgb(13, 26, 7);
+            font-size: 40px;
+            text-align: center;
+            max-width: 650px;
+            height: 300px;
         }
     }
 }

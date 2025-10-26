@@ -19,7 +19,7 @@
             <img src="assets/images/лого.png" alt="Logo">
         </a>
         <div class="header__burger" id="burger">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1"
                  x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <g>
 	<g>
@@ -70,7 +70,7 @@
         </div>
         <nav class="menu">
             <div class="menu__close">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px"
                      y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
 <g>
 	<g>
@@ -87,19 +87,19 @@
             </div>
             <ul class="menu__list">
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Товар дня</a>
+                    <a href="#day-product" class="menu__link">Товар дня</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Почему мы</a>
+                    <a href="#why-we" class="menu__link">Почему мы</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Наши фрукты</a>
+                    <a href="#products" class="menu__link">Наши фрукты</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Как заказать</a>
+                    <a href="#howToOrder" class="menu__link">Как заказать</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Отзывы</a>
+                    <a href="#reviews" class="menu__link">Отзывы</a>
                 </li>
             </ul>
         </nav>
@@ -149,7 +149,7 @@
     </div>
 </section>
 
-<section class="day-product">
+<section id="day-product" class="day-product">
     <div class="container day-product__container">
         <div class="day-product__title">Товар дня</div>
         <div class="day-product__info">
@@ -205,7 +205,7 @@
                     <div class="day-product__cost-discount">78 руб.</div>
                 </div>
                 <div class="day-product__action">
-                    <button class="btn day-product__btn">Заказать</button>
+                    <button class="btn day-product__btn make-order" data-fruit="Манго">Заказать</button>
                 </div>
                 <div class="day-product__count">
                     <?xml version="1.0" encoding="iso-8859-1"?>
@@ -260,7 +260,7 @@
     </div>
 </section>
 
-<section class="why-we">
+<section id="why-we" class="why-we">
     <div class="container">
         <div class="why-we__title">Почему мы</div>
         <div class="why-we__advantages">
@@ -399,82 +399,82 @@
     </div>
 </section>
 
-<section class="products">
+<section id="products" class="products">
     <img src="assets/images/leafs/leaf2.png" alt="leaf" class="leaf2 leaf">
     <div class="container">
         <div class="products__title">Наши фрукты</div>
         <div class="products__tab">
-            <button class="products__tab-choice-btn active">Все</button>
-            <button class="products__tab-choice-btn">Самые редкие</button>
-            <button class="products__tab-choice-btn">Акции</button>
-            <button class="products__tab-choice-btn">Новинки</button>
+            <button class="products__tab-choice-btn active" data-filter="all">Все</button>
+            <button class="products__tab-choice-btn" data-filter="rare">Самые редкие</button>
+            <button class="products__tab-choice-btn" data-filter="sale">Акции</button>
+            <button class="products__tab-choice-btn" data-filter="new">Новинки</button>
         </div>
         <div class="products__items">
-            <div class="products__item">
+            <div class="products__item" data-category="sale">
                 <div class="products__item-image">
                     <img src="assets/images/products/mango.png" alt="mango">
                 </div>
                 <div class="products__item-title">Манго, Вьетнам</div>
                 <div class="products__item-price">50 руб./кг</div>
                 <div class="products__item-action">
-                    <button class="btn products__item-btn">Заказать</button>
+                    <button class="btn products__item-btn make-order" data-fruit="Манго, Вьетнам">Заказать</button>
                 </div>
             </div>
-            <div class="products__item">
+            <div class="products__item" data-category="sale rare">
                 <div class="products__item-image">
                     <img src="assets/images/products/passion-fruit.png" alt="passion fruit">
                 </div>
                 <div class="products__item-title">Маракуйя, Таиланд</div>
                 <div class="products__item-price">45 руб./кг</div>
                 <div class="products__item-action">
-                    <button class="btn products__item-btn">Заказать</button>
+                    <button class="btn products__item-btn make-order" data-fruit="Маракуйя, Таиланд">Заказать</button>
                 </div>
             </div>
-            <div class="products__item">
+            <div class="products__item" data-category="sale">
                 <div class="products__item-image">
                     <img src="assets/images/products/coconut.png" alt="coconut">
                 </div>
                 <div class="products__item-title">Кокос, ЮАР</div>
                 <div class="products__item-price">37 руб./кг</div>
                 <div class="products__item-action">
-                    <button class="btn products__item-btn">Заказать</button>
+                    <button class="btn products__item-btn make-order" data-fruit="Кокос, ЮАР">Заказать</button>
                 </div>
             </div>
-            <div class="products__item">
+            <div class="products__item" data-category="rare new">
                 <div class="products__item-image">
                     <img src="assets/images/products/dragon-fruit.png" alt="dragon fruit">
                 </div>
                 <div class="products__item-title">Питахайя, Таиланд</div>
                 <div class="products__item-price">61 руб./кг</div>
                 <div class="products__item-action">
-                    <button class="btn products__item-btn">Заказать</button>
+                    <button class="btn products__item-btn make-order" data-fruit="Питахайя, Таиланд">Заказать</button>
                 </div>
             </div>
-            <div class="products__item">
+            <div class="products__item" data-category="sale">
                 <div class="products__item-image">
                     <img src="assets/images/products/pineapple.png" alt="pineapple">
                 </div>
                 <div class="products__item-title">Ананас, Таиланд</div>
                 <div class="products__item-price">48 руб./кг</div>
                 <div class="products__item-action">
-                    <button class="btn products__item-btn">Заказать</button>
+                    <button class="btn products__item-btn make-order" data-fruit="Ананас, Таиланд">Заказать</button>
                 </div>
             </div>
-            <div class="products__item">
+            <div class="products__item" data-category="rare new">
                 <div class="products__item-image">
                     <img src="assets/images/products/papaya.png" alt="papaya">
                 </div>
                 <div class="products__item-title">Папайя, Бразилия</div>
                 <div class="products__item-price">57 руб./кг</div>
                 <div class="products__item-action">
-                    <button class="btn products__item-btn">Заказать</button>
+                    <button class="btn products__item-btn make-order" data-fruit="Папайя, Бразилия">Заказать</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="howToOrder">
+<section id="howToOrder" class="howToOrder">
     <div class="container">
         <div class="howToOrder__title">Как заказать</div>
         <div class="howToOrder__steps">
@@ -506,7 +506,7 @@
     </div>
 </section>
 
-<section class="reviews">
+<section id="reviews" class="reviews">
     <div class="container reviews__container">
         <div class="reviews__title">Отзывы</div>
         <div class="reviews__slider">
@@ -530,16 +530,32 @@
                 <div class="reviews__img reviews__img3"></div>
                 <div class="reviews__name">Евгений</div>
                 <div class="reviews__text">
-                    Не первый раз делаю заказ в этом магазине, всегда остаюсь довольна качеством
-                    редкий фруктов, которые реально не встретишь в магазине.
+                    Заказываю в этом магазине уже несколько месяцев, каждый раз удивляюсь свежести и необычному вкусу
+                    экзотики. Очень радует разнообразие ассортимента и быстрая доставка!
                 </div>
             </div>
             <div class="reviews__slider-item">
                 <div class="reviews__img reviews__img4"></div>
                 <div class="reviews__name">Елена</div>
                 <div class="reviews__text">
-                    Отличный магазин, дети всегда радуются, когда приходит курьер с большим пакетом :) Спасибо магазину
-                    за вкусные и полезные фрукты!
+                    Магазин просто находка для любителей необычных фруктов! Подарила набор экзотики друзьям — все в
+                    восторге. Качество всегда на высоте, спасибо за ваш сервис!
+                </div>
+            </div>
+            <div class="reviews__slider-item">
+                <div class="reviews__img reviews__img5"></div>
+                <div class="reviews__name">Алексей</div>
+                <div class="reviews__text">
+                    Отличный магазин, большой выбор редких фруктов. Дети с удовольствием пробуют каждый раз новые вкусы.
+                    Особенно нравится, что все фрукты всегда свежие и экологически чистые. Спасибо!
+                </div>
+            </div>
+            <div class="reviews__slider-item">
+                <div class="reviews__img reviews__img6"></div>
+                <div class="reviews__name">Ирина</div>
+                <div class="reviews__text">
+                    Редко пишу отзывы, но здесь не могу пройти мимо. Фрукты вкусные, спелые и доставили точно в срок.
+                    Очень удобно заказывать и рекомендую всем, кто хочет попробовать что-то новое.
                 </div>
             </div>
         </div>
@@ -592,7 +608,7 @@
         </a>
         <div class="social-media">
             <a href="#" class="social-media__item">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                      id="Capa_1" x="0px" y="0px" width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75"
                      style="" xml:space="preserve">
 <g>
@@ -638,7 +654,7 @@
                 </svg>
             </a>
             <a href="#" class="social-media__item">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                      id="Capa_1" x="0px" y="0px" width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75"
                      style="" xml:space="preserve">
 <g>
@@ -680,6 +696,90 @@
         <div class="footer__text">Все права защищены, 2020</div>
     </div>
 </footer>
+
+<a href="#" class="scroll">
+    <img src="assets/images/arrows/scroll.png" alt="scroll">
+</a>
+
+<div class="order">
+    <div class="container__order">
+        <div class="order__close">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px"
+                 y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+			c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+			c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+			L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+			c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+			c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+			c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"></path>
+	</g>
+</g>
+</svg>
+        </div>
+        <img src="assets/images/leafs/leaf4.png" alt="leaf" class="leaf__order1">
+        <img src="assets/images/leafs/leaf2.png" alt="leaf" class="leaf__order2">
+        <div class="order__title">Оформление заказа</div>
+        <div class="order__text">
+            Выберите понравившиеся вам фрукты, заполните форму и в течение 15 минут с вами
+            свяжутся!
+        </div>
+        <form class="form">
+            <div class="form__title">Выберете фрукты:</div>
+            <div class="form__fruits">
+                <label class="form__fruit">
+                    Манго
+                    <input type="checkbox" class="fruits__input" name="fruits" value="Манго">
+                </label>
+                <label class="form__fruit">
+                    Манго, Вьетнам
+                    <input type="checkbox" class="fruits__input" name="fruits" value="Манго, Вьетнам">
+                </label>
+                <label class="form__fruit">
+                    Маракуйя, Таиланд
+                    <input type="checkbox" class="fruits__input" name="fruits" value="Маракуйя, Таиланд">
+                </label>
+                <label class="form__fruit">
+                    Кокос, ЮАР
+                    <input type="checkbox" class="fruits__input" name="fruits" value="Кокос, ЮАР">
+                </label>
+                <label class="form__fruit">
+                    Питахайя, Таиланд
+                    <input type="checkbox" class="fruits__input" name="fruits" value="Питахайя, Таиланд">
+                </label>
+                <label class="form__fruit">
+                    Ананас, Таиланд
+                    <input type="checkbox" class="fruits__input" name="fruits" value="Ананас, Таиланд">
+                </label>
+                <label class="form__fruit">
+                    Папайя, Бразилия
+                    <input type="checkbox" class="fruits__input" name="fruits" value="Папайя, Бразилия">
+                </label>
+                <div class="order__error">Необходимо выбрать фрукты!</div>
+            </div>
+
+            <div class="form__input">
+                <label for="name"></label>
+                <input type="text" placeholder="Ваше имя" class="order__input" name="name" id="name">
+                <div class="order__error">Необходимо ввести ваше имя!</div>
+            </div>
+
+            <div class="form__input">
+                <label for="phone"></label>
+                <input type="tel" placeholder="+7 (___) ___ - __ - __" class="order__input" name="phone" id="phone">
+                <div class="order__error">Необходимо ввести номер телефона!</div>
+            </div>
+
+
+            <button type="button" class="btn order__btn" id="submit">Отправить заявку</button>
+        </form>
+        <div id="thankYouMessage">
+            Спасибо, мы свяжемся с вами в ближайшее время!
+        </div>
+    </div>
+</div>
 
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src="scripts/jquery-ui.min.js"></script>
