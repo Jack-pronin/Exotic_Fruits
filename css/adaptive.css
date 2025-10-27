@@ -717,6 +717,7 @@
 
             .howToOrder__img-1 {
                 display: block;
+                text-align: center;
                 justify-self: right;
                 margin-bottom: 110px;
             }

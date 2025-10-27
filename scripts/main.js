@@ -32,15 +32,37 @@ $(document).ready(function () {
         $('#products')[0].scrollIntoView({behavior: 'smooth'});
     });
 
-    $('#burger').click( function() {
+    $('#burger').click(function () {
         $('.menu').addClass('open');
     });
 
-    $('.menu *').each(function() {
+    $('.menu *').each(function () {
         $(this).click(function () {
             $('.menu').removeClass('open');
         });
     });
+
+    let endTime = new Date().getTime() + (26 * 60 * 60 + 55 * 60 + 30) * 1000;
+
+    let timerInterval = setInterval(function () {
+        let now = new Date().getTime();
+        let diff = Math.floor((endTime - now) / 1000);
+
+        if (diff < 0) diff = 0;
+
+        let hours = Math.floor(diff / 3600);
+        let minutes = Math.floor((diff % 3600) / 60);
+        let seconds = diff % 60;
+
+        $('#hours').text(hours);
+        $('#minutes').text(minutes);
+        $('#seconds').text(seconds);
+
+        if (hours === 0 && minutes === 0 && seconds === 0) {
+            clearInterval(timerInterval);
+        }
+
+    }, 1000);
 
     const tab = $('.products__tab');
     const buttons = tab.find('.products__tab-choice-btn');
@@ -134,7 +156,7 @@ $(document).ready(function () {
     });
 
     let form = $('form');
-    // let loader = $('.loader__display');
+// let loader = $('.loader__display');
     let thankYouMsg = $('#thankYouMessage');
     let orderTittle = $('.order__title');
     let orderText = $('.order__text');
@@ -148,7 +170,7 @@ $(document).ready(function () {
         let errorInput = $('.order__error');
         let hasError = false;
         let fruits = $('input[name="fruits"]:checked')
-            .map(function() {
+            .map(function () {
                 return $(this).val();
             })
             .get();
@@ -192,13 +214,16 @@ $(document).ready(function () {
                         form.hide();
                         orderTittle.hide()
                         orderText.hide()
-                        thankYouMsg.css('display','flex');
+                        thankYouMsg.css('display', 'flex');
                         setTimeout(function () {
                             form[0].reset();
                             thankYouMsg.hide();
-                            orderTittle.fadeIn( "slow", function() {});
-                            orderText.fadeIn( "slow", function() {});
-                            form.fadeIn( "slow", function() {});
+                            orderTittle.fadeIn("slow", function () {
+                            });
+                            orderText.fadeIn("slow", function () {
+                            });
+                            form.fadeIn("slow", function () {
+                            });
                         }, 3000);
                     }
                 });
