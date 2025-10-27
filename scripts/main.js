@@ -32,6 +32,16 @@ $(document).ready(function () {
         $('#products')[0].scrollIntoView({behavior: 'smooth'});
     });
 
+    $('#burger').click( function() {
+        $('.menu').addClass('open');
+    });
+
+    $('.menu *').each(function() {
+        $(this).click(function () {
+            $('.menu').removeClass('open');
+        });
+    });
+
     const tab = $('.products__tab');
     const buttons = tab.find('.products__tab-choice-btn');
     let activeBtn = tab.find('.active');
@@ -159,7 +169,7 @@ $(document).ready(function () {
             hasError = true;
         }
 
-        if (!phone.val()) {
+        if (!phone.inputmask('isComplete')) {
             phone.css('border-color', 'red');
             phone.next().show();
             hasError = true;

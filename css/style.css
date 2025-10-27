@@ -859,7 +859,7 @@ main {
 }
 
 .questions {
-    padding: 60px 0 180px 0;
+    padding: 60px 0 40px 0;
     position: relative;
 
     .leaf3 {
@@ -943,7 +943,7 @@ main {
 }
 
 .footer {
-    padding: 59px 0;
+    padding: 200px 0 59px 0;
     background: url("../assets/images/bg/bg-footer.png") no-repeat center bottom;
 
     .footer__container {
@@ -995,16 +995,18 @@ main {
 }
 
 .scroll {
+    margin-top: auto;
     cursor: pointer;
     display: flex;
     z-index: 900;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    float: right;
+    position: sticky;
     width: 78px;
     height: 78px;
     right: 71px;
-    bottom: 275px;
+    bottom: 65px;
     background-image: url("../assets/images/bg/bg-info.png");
     background-size: 78px 78px;
     transition: transform 0.5s ease;
